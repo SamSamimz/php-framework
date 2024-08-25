@@ -24,7 +24,7 @@ class Router {
         $callback = $this->routes[$method][$path] ?? false;
 
         if($callback == false) {
-            return "No callback registered";
+            return $this->renderNotFound();
         }
 
         if(is_string($callback)) {
@@ -37,6 +37,11 @@ class Router {
     public function render($view)
     {
       include_once __DIR__."/views/$view.php";
+    }
+
+    public function renderNotFound()
+    {
+        include_once __DIR__."/overneeds/notfound.php";
     }
 }
 
