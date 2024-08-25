@@ -22,16 +22,22 @@ class Router {
         $method = $this->request->getMethod();
 
         $callback = $this->routes[$method][$path] ?? false;
-        
+
         if($callback == false) {
-            echo "No callback registered";
-            exit;
+            return "No callback registered";
+        }
+
+        if(is_string($callback)) {
+            return $this->render($callback);
         }
 
         echo call_user_func($callback);
-      
     }
 
+    public function render($view)
+    {
+      include_once __DIR__."/views/$view.php";
+    }
 }
 
 

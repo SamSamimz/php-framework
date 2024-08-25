@@ -13,7 +13,7 @@ class Application {
 
     public function run(): void
     {
-        $this->router->resolve();
+        echo $this->router->resolve();
     }
 
 }
