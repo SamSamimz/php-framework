@@ -1,0 +1,19 @@
+{
+    "name": "sam/php-framework",
+    "description": "This is the first php framework build by Sam Samim",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Sam Samim",
+            "email": "samsamim595@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "framework/"
+        }
+    },
+    "require": {}
+}
