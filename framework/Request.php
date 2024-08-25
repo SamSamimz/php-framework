@@ -8,9 +8,13 @@ class Request{
         $path = $_SERVER['REQUEST_URI'] ?? '/';
 
         $position = strpos($path, '?');
-        echo '<pre>';
-        var_dump($position);
-        echo "</pre>";
+
+        if(!$position) {
+            return $path;
+        }
+        
+        return substr($path, 0, $position);
+
     }
 
     public function getMethod()
