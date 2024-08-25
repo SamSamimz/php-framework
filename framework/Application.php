@@ -11,11 +11,6 @@ class Application {
         $this->router = new Router($this->request);
     }
 
-    // public function get()
-    // {
-    //     echo "Get method";
-    // }
-
     public function run(): void
     {
         $this->router->resolve();

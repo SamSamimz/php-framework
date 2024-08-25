@@ -19,10 +19,17 @@ class Router {
     public function resolve()
     {
         $path = $this->request->getPath();
+        $method = $this->request->getMethod();
+
+        $callback = $this->routes[$method][$path] ?? false;
         
-        echo '<pre>';
-        var_dump($path);
-        echo "</pre>";
+        if($callback == false) {
+            echo "No callback registered";
+            exit;
+        }
+
+        echo call_user_func($callback);
+      
     }
 
 }
