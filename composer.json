@@ -15,5 +15,7 @@
             "App\\": "framework/"
         }
     },
-    "require": {}
+    "require": {
+        "symfony/console": "^7.1"
+    }
 }
