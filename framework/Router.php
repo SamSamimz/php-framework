@@ -31,7 +31,7 @@ class Router {
             return $this->render($callback);
         }
 
-        echo call_user_func($callback);
+        call_user_func($callback);
     }
 
     public function render($view)
